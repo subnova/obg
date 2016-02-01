@@ -4,7 +4,7 @@ define(function() {
 	return {
 		apikey: {
 			google: '{{ site.apikey.google }}',
-			typekit: '{{ site.apikey.typekit }}',
+			typekit: '{{ site.apikey.typekit }}'
 		}
-	}
+	};
 });
