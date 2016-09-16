@@ -3,6 +3,8 @@
 .bundle
 .sass-cache
 .cache
+.obg-space-hash
 /build
 /data
 s3_website.yml
+contentful_config.ini

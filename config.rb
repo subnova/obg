@@ -50,7 +50,7 @@ configure :build do
 end
 
 activate :contentful do |f|
-  config = IniFile.load(File.join(ENV['HOME'], ".contentfulrc"))
+  config = IniFile.load("contentful_config.ini")
   f.access_token = config["obg"]["CONTENTFUL_DELIVERY_ACCESS_TOKEN"]
   f.space = {obg: config["obg"]["SPACE_ID"]}
   f.content_types = {article: 'article', menu: 'menu'}
