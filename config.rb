@@ -18,8 +18,10 @@ page '/*.txt', layout: false
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
-data.obg.article.each do |article_id, article_data|
-  proxy "/#{article_data.label}.html", "/article.html", :locals => { :article => article_data }, :ignore => true
+if File.exist?('data')
+  data.obg.article.each do |article_id, article_data|
+    proxy "/#{article_data.label}.html", "/article.html", :locals => { :article => article_data }, :ignore => true
+  end
 end
 
 # General configuration
