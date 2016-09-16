@@ -1,7 +1,8 @@
 .DS_store
 .bin
-.jekyll-metadata
-_site
-_config.yml
-node_modules
-bower_components
+.bundle
+.sass-cache
+.cache
+/build
+/data
+s3_website.yml

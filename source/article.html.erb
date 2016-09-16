@@ -1,0 +1,7 @@
+---
+---
+<h1><%= article.title %><h1>
+<div>
+<%= Kramdown::Document.new(article.content).to_html %>
+</div>
+

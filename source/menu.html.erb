@@ -1,0 +1,18 @@
+---
+title: Menus
+---
+
+<div class="menu">
+<% data.obg.menu.each do |id, menu| %>
+<h1><%= menu.name %> Menu</h1>
+<% menu.sections.each do |section| %>
+<table>
+<caption><%= section.sectionTitle %></caption>
+<tbody>
+<% section.menuItem.each do |item| %>
+<tr><td><b><%= item.shortDescription %> </b><%= item.longDescription %></td><td>&pound;<b><%= Kernel.format("%.2f", item.price) %></b></td></tr>
+<% end %>
+<% end %>
+<% end %>
+</div>
+
