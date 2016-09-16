@@ -14,3 +14,5 @@ gem 'middleman-livereload'
 
 gem "contentful_middleman", :git => 'https://github.com/contentful/contentful_middleman.git', :branch => 'dl/upgrade-to-v4'
 gem "inifile"
+
+gem 's3_website'
