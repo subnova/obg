@@ -1,10 +1,11 @@
 ---
 layout: article
 ---
-<h1><%= article.title %><h1>
 <div class="content">
-<div class="box">
-<%= Kramdown::Document.new(article.content).to_html %>
-</div>
+  <h1><%= article.title %></h1>
+
+  <div class="box">
+    <%= Kramdown::Document.new(article.content).to_html %>
+  </div>
 </div>
 

@@ -4,8 +4,11 @@
 .sass-cache
 .cache
 .obg-space-hash
+.idea
 /build
 /data
 /node_modules
 s3_website.yml
 contentful_config.ini
+*.iml
+
