@@ -6,5 +6,6 @@
 .obg-space-hash
 /build
 /data
+/node_modules
 s3_website.yml
 contentful_config.ini

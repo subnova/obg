@@ -20,7 +20,7 @@ page '/*.txt', layout: false
 
 if File.exist?('data')
   data.obg.article.each do |article_id, article_data|
-    proxy "/#{article_data.label}.html", "/article.html", :locals => { :article => article_data }, :ignore => true
+    proxy "/#{article_data.label}.html", "/article.html", :locals => { :article => article_data, :title => article_data.title }, :ignore => true
   end
 end
 
