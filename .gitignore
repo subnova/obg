@@ -8,6 +8,7 @@
 /build
 /data
 /node_modules
+/bower_components
 s3_website.yml
 contentful_config.ini
 *.iml
