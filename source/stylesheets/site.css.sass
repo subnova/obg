@@ -11,9 +11,15 @@ $family-primary: $family-serif
   h6
     font-family: "cabazon", serif
 
-.gallery
-  a
-    display: block
+.gallery .item img
+  max-width: none
+  max-height: 100vh
+  position: absolute
+  top: -9999px
+  bottom: -9999px
+  left: -9999px
+  right: -9999px
+  margin: auto
 
 @import "bulma"
 @import "gallery.prefixed.css"
