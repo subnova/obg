@@ -1,0 +1,29 @@
+---
+---
+<div class="gallery autoplay items-<%= page.articles.length %>">
+  <% [*1..page.articles.length].each do |num| %>
+    <div id="item-<%= num %>" class="control-operator"></div>
+  <% end %>
+
+  <% page.articles.each do |article| %>
+  <figure class="item">
+    <a href="#<%= article.label %>">
+      <img src="<%= article.photo.url %>"/>
+    </a>
+  </figure>
+  <% end %>
+
+  <div class="controls">
+  <% [*1..page.articles.length].each do |num| %>
+    <a href="#item-<%= num %>" class="control-button">•</a>
+  <% end %>
+  </div>
+</div>
+
+<% page.articles.each do |article| %>
+<article class="content">
+  <a name="<%= article.label %>"><h2><%= article.title %></h2></a>
+  <p><%= Kramdown::Document.new(article.content).to_html %></p>
+</article>
+<% end %>
+

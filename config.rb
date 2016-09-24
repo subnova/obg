@@ -18,9 +18,21 @@ page '/*.txt', layout: false
 # proxy "/this-page-has-no-template.html", "/template-file.html", locals: {
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
-if File.exist?('data')
-  data.obg.article.each do |article_id, article_data|
-    proxy "/#{article_data.label}.html", "/article.html", :locals => { :article => article_data, :title => article_data.title }, :ignore => true
+if File.exist?('data/obg/page')
+  data.obg.page.each do |page_id, page_data|
+    proxy "/#{page_data.article.label}.html", "/page.html", :locals => { :page => page_data, :title => page_data.title }, :ignore => true
+  end
+end
+
+if File.exist?('data/obg/multipage')
+  data.obg.multipage.each do |page_id, page_data|
+    proxy "/#{page_data.label}.html", "/multipage.html", :locals => { :page => page_data, :title => page_data.title }, :ignore => true
+  end
+end
+
+if File.exist?('data/obg/menupage')
+  data.obg.menupage.each do |page_id, page_data|
+    proxy "/#{page_data.label}.html", "/menupage.html", :locals => { :page => page_data, :title => page_data.title }, :ignore => true
   end
 end
 
@@ -55,6 +67,7 @@ activate :contentful do |f|
   config = IniFile.load("contentful_config.ini")
   f.access_token = config["obg"]["CONTENTFUL_DELIVERY_ACCESS_TOKEN"]
   f.space = {obg: config["obg"]["SPACE_ID"]}
-  f.content_types = {article: 'article', menu: 'menu'}
+  f.content_types = {multipage: 'multipleArticlePage', page: 'page', menupage: 'menuPage' }
+  f.cda_query = { include: 2 }
 end
 

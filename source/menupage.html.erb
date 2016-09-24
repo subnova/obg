@@ -1,9 +1,8 @@
 ---
 title: Menus
 ---
-
 <div class="menu">
-<% data.obg.menu.each do |id, menu| %>
+<% page.menus.each do |menu| %>
 <h1><%= menu.name %> Menu</h1>
 <% menu.sections.each do |section| %>
 <table>
@@ -15,4 +14,3 @@ title: Menus
 <% end %>
 <% end %>
 </div>
-
